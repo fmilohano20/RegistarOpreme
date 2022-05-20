@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RegistarOpreme.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,8 +18,10 @@ namespace RegistarOpreme
             InitializeComponent();
         }
 
-       
-
-       
+        private void FrmEvidentiranjeOpreme_Load(object sender, EventArgs e)
+        {
+           var financeSources =  FinanceSourceRepository.GetFinanceSources();
+           cboFinanceSource.DataSource = financeSources;
+        }
     }
 }

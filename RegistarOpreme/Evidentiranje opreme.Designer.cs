@@ -236,6 +236,7 @@
             this.Controls.Add(this.btnQuit);
             this.Name = "FrmEvidentiranjeOpreme";
             this.Text = "Evidnetiranje opreme";
+            this.Load += new System.EventHandler(this.FrmEvidentiranjeOpreme_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
