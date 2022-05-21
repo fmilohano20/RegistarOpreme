@@ -56,9 +56,13 @@
     <Compile Include="Evidentiranje opreme.Designer.cs">
       <DependentUpon>Evidentiranje opreme.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Employe.cs" />
+    <Compile Include="Models\EquipmentRecord.cs" />
     <Compile Include="Models\FinanceSource.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\EmployeRepository.cs" />
+    <Compile Include="Repositories\EquipmentRecordRepository.cs" />
     <Compile Include="Repositories\FinanceSourceRepository.cs" />
     <EmbeddedResource Include="Evidentiranje opreme.resx">
       <DependentUpon>Evidentiranje opreme.cs</DependentUpon>

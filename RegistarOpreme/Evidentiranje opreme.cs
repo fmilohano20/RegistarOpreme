@@ -20,8 +20,15 @@ namespace RegistarOpreme
 
         private void FrmEvidentiranjeOpreme_Load(object sender, EventArgs e)
         {
-           var financeSources =  FinanceSourceRepository.GetFinanceSources();
-           cboFinanceSource.DataSource = financeSources;
+            var financeSources =  FinanceSourceRepository.GetFinanceSources();
+            cboFinanceSource.DataSource = financeSources;
+            var shopper = EmployeRepository.GetEmployes();
+            var recipient = EmployeRepository.GetEmployes(); ;
+            cboShopper.DataSource = shopper;
+            cboRecipient.DataSource = recipient;
+            
         }
+
+       
     }
 }

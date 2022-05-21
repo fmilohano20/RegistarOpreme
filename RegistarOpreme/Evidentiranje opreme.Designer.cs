@@ -42,10 +42,10 @@
             this.cboFinanceSource = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.ProcessingDate = new System.Windows.Forms.DateTimePicker();
-            this.txtShopper = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtRecipient = new System.Windows.Forms.TextBox();
+            this.cboShopper = new System.Windows.Forms.ComboBox();
+            this.cboRecipient = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnQuit
@@ -175,13 +175,6 @@
             this.ProcessingDate.Size = new System.Drawing.Size(197, 20);
             this.ProcessingDate.TabIndex = 13;
             // 
-            // txtShopper
-            // 
-            this.txtShopper.Location = new System.Drawing.Point(128, 332);
-            this.txtShopper.Name = "txtShopper";
-            this.txtShopper.Size = new System.Drawing.Size(220, 20);
-            this.txtShopper.TabIndex = 15;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -204,21 +197,30 @@
             this.label8.Text = "Zaprimatelj";
             this.label8.UseWaitCursor = true;
             // 
-            // txtRecipient
+            // cboShopper
             // 
-            this.txtRecipient.Location = new System.Drawing.Point(128, 374);
-            this.txtRecipient.Name = "txtRecipient";
-            this.txtRecipient.Size = new System.Drawing.Size(220, 20);
-            this.txtRecipient.TabIndex = 17;
+            this.cboShopper.FormattingEnabled = true;
+            this.cboShopper.Location = new System.Drawing.Point(128, 332);
+            this.cboShopper.Name = "cboShopper";
+            this.cboShopper.Size = new System.Drawing.Size(220, 21);
+            this.cboShopper.TabIndex = 18;
+            // 
+            // cboRecipient
+            // 
+            this.cboRecipient.FormattingEnabled = true;
+            this.cboRecipient.Location = new System.Drawing.Point(128, 371);
+            this.cboRecipient.Name = "cboRecipient";
+            this.cboRecipient.Size = new System.Drawing.Size(220, 21);
+            this.cboRecipient.TabIndex = 19;
             // 
             // FrmEvidentiranjeOpreme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(363, 570);
-            this.Controls.Add(this.txtRecipient);
+            this.Controls.Add(this.cboRecipient);
+            this.Controls.Add(this.cboShopper);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtShopper);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.ProcessingDate);
             this.Controls.Add(this.label6);
@@ -258,10 +260,10 @@
         private System.Windows.Forms.ComboBox cboFinanceSource;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker ProcessingDate;
-        private System.Windows.Forms.TextBox txtShopper;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtRecipient;
+        private System.Windows.Forms.ComboBox cboShopper;
+        private System.Windows.Forms.ComboBox cboRecipient;
     }
 }
 

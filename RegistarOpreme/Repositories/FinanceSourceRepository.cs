@@ -17,7 +17,7 @@ namespace RegistarOpreme.Repositories
 
         public static FinanceSource GetFinanceSource(int id)
         {
-            DB.SetConfiguration("fmilohano20_DB", "fmilohano20", "U^(q{5Oi"); ///!!!!!!!!!
+            DB.SetConfiguration("fmilohano20_DB", "fmilohano20", "U^(q{5Oi"); // Important!
             FinanceSource financeSource = null;
             string sql = $"SELECT * FROM FinanceSources WHERE Id = {id}";
             DB.OpenConnection();
@@ -37,7 +37,7 @@ namespace RegistarOpreme.Repositories
       
         public static List<FinanceSource> GetFinanceSources()
         {
-            DB.SetConfiguration("fmilohano20_DB", "fmilohano20", "U^(q{5Oi"); ///!!!!!!!!!
+            DB.SetConfiguration("fmilohano20_DB", "fmilohano20", "U^(q{5Oi"); // Important!
             List<FinanceSource> financeSources = new List<FinanceSource>();
             string sql = "SELECT * FROM FinanceSources";
             DB.OpenConnection();
