@@ -17,7 +17,7 @@ namespace RegistarOpreme.Models
 
         public string ProjectName { get; set; }
 
-        public FinanceSource FinanceSource { get; set; }
+        public FinanceSource Finance_Source { get; set; }
 
         public string ProcessingDate { get; set; }            // maybe wrong LOOK OUT FOR DATA PARSING/CONVERSION
 

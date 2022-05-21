@@ -1,4 +1,6 @@
-﻿using System;
+﻿using RegistarOpreme.Models;
+using RegistarOpreme.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,35 @@ namespace RegistarOpreme
         public FrmViewEquipment()
         {
             InitializeComponent();
+            Employe user = FrmLogin.user;
+            if(user.CheckAuthority(user.WorkPlace))
+            {
+                btnRecord.Visible = true;
+            }
+        }
+
+        private void FrmViewEquipment_Load(object sender, EventArgs e)
+        {
+            var equipmentRecords = EquipmentRecordRepository.GetEquipmentRecords();
+            dgvEquipmentRecords.DataSource = equipmentRecords;
+            dgvEquipmentRecords.Columns["Id"].DisplayIndex = 0;
+            dgvEquipmentRecords.Columns["Name"].DisplayIndex = 1;
+            dgvEquipmentRecords.Columns["Type"].DisplayIndex = 2;
+            dgvEquipmentRecords.Columns["Description"].DisplayIndex =3;
+            dgvEquipmentRecords.Columns["ProjectName"].DisplayIndex = 4;
+            dgvEquipmentRecords.Columns["Finance_Source"].DisplayIndex = 5;
+            dgvEquipmentRecords.Columns["ProcessingDate"].DisplayIndex = 6;
+            dgvEquipmentRecords.Columns["Shopper"].DisplayIndex = 7;
+            dgvEquipmentRecords.Columns["Recipient"].DisplayIndex = 8;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Hide();
+            FrmRecordEquipment frmRecordEquipment = new FrmRecordEquipment();
+            frmRecordEquipment.ShowDialog();
+            Close();
+
         }
     }
 }

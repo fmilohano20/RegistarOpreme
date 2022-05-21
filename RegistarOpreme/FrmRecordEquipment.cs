@@ -64,7 +64,16 @@ namespace RegistarOpreme
         private void btnQuit_Click(object sender, EventArgs e)
         {
             clearInput();
+            Hide();
+            FrmViewEquipment frmViewEquipment = new FrmViewEquipment();
+            frmViewEquipment.ShowDialog();
             Close();
+        }
+
+        private void btnShowRecordView_Click(object sender, EventArgs e)
+        {
+            
+
         }
     }
 }

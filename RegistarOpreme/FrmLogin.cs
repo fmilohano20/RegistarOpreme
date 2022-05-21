@@ -41,19 +41,8 @@ namespace RegistarOpreme
                 if (user!=null & user.CheckPassword(txtPassword.Text))
                 {
                     Hide();
-                    if (user.CheckAuthority(user.WorkPlace))
-                    {
-                        FrmRecordEquipment recordEquipment = new FrmRecordEquipment();
-                        recordEquipment.ShowDialog();
-                        
-                    }
-                    else
-                    {
-                        FrmViewEquipment viewEquipment = new FrmViewEquipment();
-                        viewEquipment.ShowDialog();
-                        
-
-                    }
+                    FrmViewEquipment viewEquipment = new FrmViewEquipment();
+                    viewEquipment.ShowDialog();
                     Close();
                 }
                 else
