@@ -38,7 +38,7 @@ namespace RegistarOpreme
             else
             {
              
-                if (user!=null & user.CheckPassword(txtPassword.Text))
+                if (user!=null && user.CheckPassword(txtPassword.Text))
                 {
                     Hide();
                     FrmViewEquipment viewEquipment = new FrmViewEquipment();
@@ -60,6 +60,11 @@ namespace RegistarOpreme
             FrmRecordEquipment recordEquipment = new FrmRecordEquipment();
             recordEquipment.ShowDialog();
             Close();
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

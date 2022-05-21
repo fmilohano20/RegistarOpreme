@@ -19,10 +19,16 @@ namespace RegistarOpreme.Models
 
         public FinanceSource Finance_Source { get; set; }
 
-        public string ProcessingDate { get; set; }            // maybe wrong LOOK OUT FOR DATA PARSING/CONVERSION
+        public string ProcessingDate { get; set; }            
 
         public Employe Shopper { get; set; }
 
         public Employe Recipient { get; set; }
+
+
+        public override string ToString()
+        {
+            return Id + " " + Name + " " + Type;
+        }
     }
 }

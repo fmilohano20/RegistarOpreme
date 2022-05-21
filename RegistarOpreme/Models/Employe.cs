@@ -37,11 +37,16 @@ namespace RegistarOpreme.Models
                 return false;
         }
 
-        public void RecordData(string name, string type,string project, string description,int financeSource, int shopper, int recipient)
-        {   
+        public void RecordData(string name, string type,string project, string description,int financeSource, int shopper, int recipient,int id)
+        {
             string processingDate = DateTime.Now.ToString();
-            EquipmentRecordRepository.CreateRecord(name, type, project, description, financeSource, shopper, recipient,processingDate);
+            if (id>0)
+                EquipmentRecordRepository.UpdateRecord(name, type, project, description, financeSource, shopper, recipient, processingDate,id);
+            else
+                EquipmentRecordRepository.CreateRecord(name, type, project, description, financeSource, shopper, recipient,processingDate);
 
         }
+
+        
     }
 }

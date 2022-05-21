@@ -40,6 +40,7 @@
             this.dgvEquipmentRecords.Name = "dgvEquipmentRecords";
             this.dgvEquipmentRecords.Size = new System.Drawing.Size(1101, 492);
             this.dgvEquipmentRecords.TabIndex = 0;
+            
             // 
             // btnRecord
             // 
