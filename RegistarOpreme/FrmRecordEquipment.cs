@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace RegistarOpreme
 {
-    public partial class FrmEvidentiranjeOpreme : Form
+    public partial class FrmRecordEquipment : Form
     {
-        public FrmEvidentiranjeOpreme()
+        public FrmRecordEquipment()
         {
             InitializeComponent();
         }
@@ -29,6 +29,12 @@ namespace RegistarOpreme
             
         }
 
-       
+        private void btnRecord_Click(object sender, EventArgs e)
+        {
+            var financesource = cboFinanceSource.SelectedIndex;
+            var shopper = cboShopper.SelectedIndex;
+            var recipient = cboRecipient.SelectedIndex;
+            
+        }
     }
 }

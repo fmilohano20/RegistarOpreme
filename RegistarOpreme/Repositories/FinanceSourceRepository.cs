@@ -12,9 +12,6 @@ namespace RegistarOpreme.Repositories
     public class FinanceSourceRepository
     {
         
-            
-        
-
         public static FinanceSource GetFinanceSource(int id)
         {
             DB.SetConfiguration("fmilohano20_DB", "fmilohano20", "U^(q{5Oi"); // Important!
@@ -55,9 +52,6 @@ namespace RegistarOpreme.Repositories
 
         }
       
-
-
-
 
         private static FinanceSource CreateObject(SqlDataReader reader)
         {

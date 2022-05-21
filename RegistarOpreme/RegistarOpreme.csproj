@@ -50,11 +50,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Evidentiranje opreme.cs">
+    <Compile Include="FrmRecordEquipment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Evidentiranje opreme.Designer.cs">
-      <DependentUpon>Evidentiranje opreme.cs</DependentUpon>
+    <Compile Include="FrmRecordEquipment.Designer.cs">
+      <DependentUpon>FrmRecordEquipment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Employe.cs" />
     <Compile Include="Models\EquipmentRecord.cs" />
@@ -64,8 +70,17 @@
     <Compile Include="Repositories\EmployeRepository.cs" />
     <Compile Include="Repositories\EquipmentRecordRepository.cs" />
     <Compile Include="Repositories\FinanceSourceRepository.cs" />
-    <EmbeddedResource Include="Evidentiranje opreme.resx">
-      <DependentUpon>Evidentiranje opreme.cs</DependentUpon>
+    <Compile Include="FrmViewEquipment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmViewEquipment.Designer.cs">
+      <DependentUpon>FrmViewEquipment.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmRecordEquipment.resx">
+      <DependentUpon>FrmRecordEquipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -76,6 +91,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FrmViewEquipment.resx">
+      <DependentUpon>FrmViewEquipment.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

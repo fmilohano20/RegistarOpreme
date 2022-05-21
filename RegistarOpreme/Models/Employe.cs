@@ -18,9 +18,22 @@ namespace RegistarOpreme.Models
 
         public string WorkPlace { get; set; }
 
-        public override string ToString()
+       public override string ToString()
         {
-            return FirstName + " " + LastName;
+            return FirstName +" "+LastName;
+        }
+
+        public bool CheckPassword(string password)
+        { 
+            return Password == password;
+        }
+
+        public bool CheckAuthority(string workpalce)
+        { 
+            if(workpalce == "CIP")
+                return true;
+            else
+                return false;
         }
     }
 }

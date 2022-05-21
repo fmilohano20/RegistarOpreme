@@ -1,6 +1,6 @@
 ﻿namespace RegistarOpreme
 {
-    partial class FrmEvidentiranjeOpreme
+    partial class FrmRecordEquipment
     {
         /// <summary>
         /// Required designer variable.
@@ -65,6 +65,7 @@
             this.btnRecord.TabIndex = 1;
             this.btnRecord.Text = "Evidentiraj";
             this.btnRecord.UseVisualStyleBackColor = true;
+            this.btnRecord.Click += new System.EventHandler(this.btnRecord_Click);
             // 
             // label1
             // 
@@ -213,7 +214,7 @@
             this.cboRecipient.Size = new System.Drawing.Size(220, 21);
             this.cboRecipient.TabIndex = 19;
             // 
-            // FrmEvidentiranjeOpreme
+            // FrmRecordEquipment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -236,7 +237,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRecord);
             this.Controls.Add(this.btnQuit);
-            this.Name = "FrmEvidentiranjeOpreme";
+            this.Name = "FrmRecordEquipment";
             this.Text = "Evidnetiranje opreme";
             this.Load += new System.EventHandler(this.FrmEvidentiranjeOpreme_Load);
             this.ResumeLayout(false);

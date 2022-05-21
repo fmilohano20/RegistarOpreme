@@ -16,7 +16,7 @@ namespace RegistarOpreme
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmEvidentiranjeOpreme());
+            Application.Run(new FrmLogin());
         }
     }
 }

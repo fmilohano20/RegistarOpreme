@@ -12,27 +12,38 @@ namespace RegistarOpreme.Repositories
     public class EmployeRepository
     {
 
+        public static Employe GetEmploye(string username)
+        {
+            string sql = $"SELECT * FROM Employes WHERE Username = '{username}'"; 
+            return FetchEmploye(sql);
+        }
         public static Employe GetEmploye(int id)
         {
+            string sql = $"SELECT * FROM Employes WHERE Id = '{id}'";
+            return FetchEmploye(sql);
+        }
+
+        public static Employe FetchEmploye(string sql)
+        {
+            DB.SetConfiguration("fmilohano20_DB", "fmilohano20", "U^(q{5Oi");
             Employe employe = null;
-            string sql = $"SELECT * FROM Employes WHERE {id}";
             DB.OpenConnection();
             var reader = DB.GetDataReader(sql);
-            if(reader.HasRows)
+            if (reader.HasRows)
             {
+
                 reader.Read();
                 employe = CreateObject(reader);
-                DB.CloseConnection();
+                reader.Close();
             }
-
-
-
+            DB.CloseConnection();
             return employe;
 
         }
 
         public static List<Employe> GetEmployes()
         {
+            DB.SetConfiguration("fmilohano20_DB", "fmilohano20", "U^(q{5Oi");
             List<Employe> employes = new List<Employe>();
             string sql = "SELECT * FROM Employes";
             DB.OpenConnection();
@@ -56,7 +67,7 @@ namespace RegistarOpreme.Repositories
             string password = reader["Password"].ToString();
             string workplace = reader["Work_place"].ToString();
 
-            Employe employe = new Employe
+            var employe = new Employe
             {
                 Id = id,
                 FirstName = firstName,
@@ -65,7 +76,7 @@ namespace RegistarOpreme.Repositories
                 Password = password,
                 WorkPlace = workplace
             };
-
+            
 
             return employe;
         }
