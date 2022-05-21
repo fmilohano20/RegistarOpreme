@@ -40,26 +40,25 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cboFinanceSource = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.ProcessingDate = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cboShopper = new System.Windows.Forms.ComboBox();
-            this.cboRecipient = new System.Windows.Forms.ComboBox();
+            this.txtRecipient = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnQuit
             // 
-            this.btnQuit.Location = new System.Drawing.Point(16, 458);
+            this.btnQuit.Location = new System.Drawing.Point(16, 386);
             this.btnQuit.Name = "btnQuit";
             this.btnQuit.Size = new System.Drawing.Size(156, 78);
             this.btnQuit.TabIndex = 0;
             this.btnQuit.Text = "Odustani";
             this.btnQuit.UseVisualStyleBackColor = true;
+            this.btnQuit.Click += new System.EventHandler(this.btnQuit_Click);
             // 
             // btnRecord
             // 
-            this.btnRecord.Location = new System.Drawing.Point(192, 458);
+            this.btnRecord.Location = new System.Drawing.Point(192, 386);
             this.btnRecord.Name = "btnRecord";
             this.btnRecord.Size = new System.Drawing.Size(156, 78);
             this.btnRecord.TabIndex = 1;
@@ -158,29 +157,11 @@
             this.cboFinanceSource.Size = new System.Drawing.Size(198, 21);
             this.cboFinanceSource.TabIndex = 11;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 294);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(142, 20);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Datum zaprimanja:";
-            this.label6.UseWaitCursor = true;
-            // 
-            // ProcessingDate
-            // 
-            this.ProcessingDate.Location = new System.Drawing.Point(151, 294);
-            this.ProcessingDate.Name = "ProcessingDate";
-            this.ProcessingDate.Size = new System.Drawing.Size(197, 20);
-            this.ProcessingDate.TabIndex = 13;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 330);
+            this.label7.Location = new System.Drawing.Point(12, 289);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 20);
             this.label7.TabIndex = 14;
@@ -191,7 +172,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(12, 372);
+            this.label8.Location = new System.Drawing.Point(12, 331);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(87, 20);
             this.label8.TabIndex = 16;
@@ -201,30 +182,28 @@
             // cboShopper
             // 
             this.cboShopper.FormattingEnabled = true;
-            this.cboShopper.Location = new System.Drawing.Point(128, 332);
+            this.cboShopper.Location = new System.Drawing.Point(128, 291);
             this.cboShopper.Name = "cboShopper";
             this.cboShopper.Size = new System.Drawing.Size(220, 21);
             this.cboShopper.TabIndex = 18;
             // 
-            // cboRecipient
+            // txtRecipient
             // 
-            this.cboRecipient.FormattingEnabled = true;
-            this.cboRecipient.Location = new System.Drawing.Point(128, 371);
-            this.cboRecipient.Name = "cboRecipient";
-            this.cboRecipient.Size = new System.Drawing.Size(220, 21);
-            this.cboRecipient.TabIndex = 19;
+            this.txtRecipient.Location = new System.Drawing.Point(128, 333);
+            this.txtRecipient.Name = "txtRecipient";
+            this.txtRecipient.ReadOnly = true;
+            this.txtRecipient.Size = new System.Drawing.Size(220, 20);
+            this.txtRecipient.TabIndex = 19;
             // 
             // FrmRecordEquipment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(363, 570);
-            this.Controls.Add(this.cboRecipient);
+            this.ClientSize = new System.Drawing.Size(363, 503);
+            this.Controls.Add(this.txtRecipient);
             this.Controls.Add(this.cboShopper);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.ProcessingDate);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.cboFinanceSource);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtProjectName);
@@ -259,12 +238,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cboFinanceSource;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker ProcessingDate;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox cboShopper;
-        private System.Windows.Forms.ComboBox cboRecipient;
+        private System.Windows.Forms.TextBox txtRecipient;
     }
 }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RegistarOpreme.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,6 +35,13 @@ namespace RegistarOpreme.Models
                 return true;
             else
                 return false;
+        }
+
+        public void RecordData(string name, string type,string project, string description,int financeSource, int shopper, int recipient)
+        {   
+            string processingDate = DateTime.Now.ToString();
+            EquipmentRecordRepository.CreateRecord(name, type, project, description, financeSource, shopper, recipient,processingDate);
+
         }
     }
 }
