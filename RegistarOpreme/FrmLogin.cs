@@ -54,13 +54,7 @@ namespace RegistarOpreme
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Hide();
-            FrmRecordEquipment recordEquipment = new FrmRecordEquipment();
-            recordEquipment.ShowDialog();
-            Close();
-        }
+        
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {

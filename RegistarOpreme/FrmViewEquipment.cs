@@ -21,6 +21,7 @@ namespace RegistarOpreme
             if(user.CheckAuthority(user.WorkPlace))
             {
                 btnRecord.Visible = true;
+                btnUpdate.Visible = true;
             }
         }
 
@@ -43,10 +44,18 @@ namespace RegistarOpreme
         {
            
             Hide();
-            FrmRecordEquipment frmRecordEquipment = new FrmRecordEquipment();
+            FrmRecordEquipment frmRecordEquipment = new FrmRecordEquipment(false);
             frmRecordEquipment.ShowDialog();
             Close();
 
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            Hide();
+            FrmRecordEquipment frmRecordEquipment = new FrmRecordEquipment(true);
+            frmRecordEquipment.ShowDialog();
+            Close();
         }
     }
 }

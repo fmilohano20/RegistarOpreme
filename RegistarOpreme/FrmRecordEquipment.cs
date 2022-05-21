@@ -17,12 +17,23 @@ namespace RegistarOpreme
         
         private List<EquipmentRecord> equipmentRecords;
         private EquipmentRecord cheat = new EquipmentRecord();
-        private bool update { get; set; } 
-
-        public FrmRecordEquipment()
+        private bool Update_bool { get; set; } 
+        
+        public FrmRecordEquipment(bool update)
         {
             InitializeComponent();
-            
+            if (update)
+            {
+                cboSelectedItem.Visible = true;
+                lblUpdateData.Visible = true;
+                Update_bool = true;
+            }
+            else
+            {
+                cboSelectedItem.Visible = false;
+                lblUpdateData.Visible = false;
+
+            }
 
         }
         private void FrmEvidentiranjeOpreme_Load(object sender, EventArgs e)
@@ -52,17 +63,27 @@ namespace RegistarOpreme
             string type = txtEquipmentType.Text;
             string project = txtProjectName.Text;
             string description = txtEquipmentDescription.Text;
-
-            if(update)
+            if(financesource==0 || shopper==0 || type =="" || description=="" || name=="")
             {
-                user.RecordData(name, type, project, description, financesource, shopper, recipient,cboSelectedItem.SelectedIndex);
-                MessageBox.Show("Uspiješano ažuriranje podataka!", "Ažuriranje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Console.WriteLine(financesource + " " + shopper + " " + type + "" + description + " " + name);
+                MessageBox.Show("Obavezna polja nisu ispunjena!", "Krivi unos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
             else
             {
-                user.RecordData(name, type, project, description, financesource, shopper, recipient,0);
-                MessageBox.Show("Uspiješan unos!", "Unos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (Update_bool)
+                {
+                    user.RecordData(name, type, project, description, financesource, shopper, recipient, cboSelectedItem.SelectedIndex);
+                    MessageBox.Show("Uspiješano ažuriranje podataka!", "Ažuriranje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    user.RecordData(name, type, project, description, financesource, shopper, recipient, 0);
+                    MessageBox.Show("Uspiješan unos!", "Unos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
+            
+            
             
             
         }
@@ -92,22 +113,24 @@ namespace RegistarOpreme
             if(cboSelectedItem.SelectedIndex != 0)
             {
                 EquipmentRecord current = equipmentRecords[cboSelectedItem.SelectedIndex];
-                txtEquipmentName.Text = equipmentRecords[cboSelectedItem.SelectedIndex].Name;
-                txtEquipmentType.Text = equipmentRecords[cboSelectedItem.SelectedIndex].Type;
-                txtProjectName.Text = equipmentRecords[cboSelectedItem.SelectedIndex].ProjectName;
-                txtEquipmentDescription.Text = equipmentRecords[cboSelectedItem.SelectedIndex].Description;
+                txtEquipmentName.Text = current.Name;
+                txtEquipmentType.Text = current.Type;
+                txtProjectName.Text = current.ProjectName;
+                txtEquipmentDescription.Text = current.Description;
 
-                cboFinanceSource.Text = current.Finance_Source.ToString();
-                cboShopper.Text = current.Shopper.ToString();
-                update = true;
+                cboFinanceSource.SelectedIndex = current.Finance_Source.Id;
+                cboShopper.SelectedIndex = current.Shopper.Id;
+                Update_bool = true;
             }
             else
             {   
                 clearInput();
-                update = false;
+                Update_bool = false;
             }
 
             
         }
+
+  
     }
 }

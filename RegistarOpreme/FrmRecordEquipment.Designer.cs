@@ -45,7 +45,7 @@
             this.cboShopper = new System.Windows.Forms.ComboBox();
             this.txtRecipient = new System.Windows.Forms.TextBox();
             this.cboSelectedItem = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblUpdateData = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnQuit
@@ -188,6 +188,7 @@
             this.cboShopper.Name = "cboShopper";
             this.cboShopper.Size = new System.Drawing.Size(220, 21);
             this.cboShopper.TabIndex = 18;
+            
             // 
             // txtRecipient
             // 
@@ -207,22 +208,22 @@
             this.cboSelectedItem.Text = "--Ažuriraj--";
             this.cboSelectedItem.SelectedIndexChanged += new System.EventHandler(this.cboSelectedItem_SelectedIndexChanged);
             // 
-            // label6
+            // lblUpdateData
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 13);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(128, 20);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "Ažuriraj podatke:";
+            this.lblUpdateData.AutoSize = true;
+            this.lblUpdateData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdateData.Location = new System.Drawing.Point(12, 13);
+            this.lblUpdateData.Name = "lblUpdateData";
+            this.lblUpdateData.Size = new System.Drawing.Size(128, 20);
+            this.lblUpdateData.TabIndex = 21;
+            this.lblUpdateData.Text = "Ažuriraj podatke:";
             // 
             // FrmRecordEquipment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(363, 550);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblUpdateData);
             this.Controls.Add(this.cboSelectedItem);
             this.Controls.Add(this.txtRecipient);
             this.Controls.Add(this.cboShopper);
@@ -267,7 +268,7 @@
         private System.Windows.Forms.ComboBox cboShopper;
         private System.Windows.Forms.TextBox txtRecipient;
         private System.Windows.Forms.ComboBox cboSelectedItem;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblUpdateData;
     }
 }
 
