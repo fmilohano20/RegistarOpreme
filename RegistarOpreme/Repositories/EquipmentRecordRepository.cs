@@ -30,14 +30,31 @@ namespace RegistarOpreme.Repositories
             DB.CloseConnection();
         }
 
+        public static void DeleteRecord(int id)
+        {
+            DB.SetConfiguration("fmilohano20_DB", "fmilohano20", "U^(q{5Oi"); // Important!
+            string sql = $"DELETE FROM EquipmentRecords WHERE Id = '{id}'";
+            DB.OpenConnection();
+            DB.ExecuteCommand(sql);
+            DB.CloseConnection();
+        }
+
         public static List<EquipmentRecord> GetEquipmentRecords()
         {
             DB.SetConfiguration("fmilohano20_DB", "fmilohano20", "U^(q{5Oi"); // Important!
-            List<EquipmentRecord> equipmentRecords = new List<EquipmentRecord>();
+            List<EquipmentRecord> equipmentRecords;
             string sql = "SELECT * FROM EquipmentRecords";
             DB.OpenConnection();
-
+            
             var reader = DB.GetDataReader(sql);
+            if(reader!=null)
+            {
+                equipmentRecords = new List<EquipmentRecord>();
+            }
+            else
+            {
+                equipmentRecords = null;
+            }
             while (reader.Read())
             {
                 EquipmentRecord equipmentRecord = CreateObject(reader);

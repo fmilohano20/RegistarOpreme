@@ -27,6 +27,7 @@ namespace RegistarOpreme
                 cboSelectedItem.Visible = true;
                 lblUpdateData.Visible = true;
                 Update_bool = true;
+                btnDelete.Visible = true;
             }
             else
             {
@@ -131,6 +132,18 @@ namespace RegistarOpreme
             
         }
 
-  
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            FrmLogin.user.DeleteData(equipmentRecords[cboSelectedItem.SelectedIndex].Id);
+            equipmentRecords = EquipmentRecordRepository.GetEquipmentRecords();
+            cboSelectedItem.DataSource = equipmentRecords;
+            MessageBox.Show("Uspiješano brisanje!", "Brisanje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (equipmentRecords==null)
+            {
+                Close();
+            }
+
+            
+        }
     }
 }

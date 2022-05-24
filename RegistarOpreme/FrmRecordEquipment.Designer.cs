@@ -46,13 +46,14 @@
             this.txtRecipient = new System.Windows.Forms.TextBox();
             this.cboSelectedItem = new System.Windows.Forms.ComboBox();
             this.lblUpdateData = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnQuit
             // 
             this.btnQuit.Location = new System.Drawing.Point(19, 442);
             this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(156, 78);
+            this.btnQuit.Size = new System.Drawing.Size(156, 51);
             this.btnQuit.TabIndex = 0;
             this.btnQuit.Text = "Odustani";
             this.btnQuit.UseVisualStyleBackColor = true;
@@ -62,7 +63,7 @@
             // 
             this.btnRecord.Location = new System.Drawing.Point(195, 442);
             this.btnRecord.Name = "btnRecord";
-            this.btnRecord.Size = new System.Drawing.Size(156, 78);
+            this.btnRecord.Size = new System.Drawing.Size(156, 51);
             this.btnRecord.TabIndex = 1;
             this.btnRecord.Text = "Evidentiraj";
             this.btnRecord.UseVisualStyleBackColor = true;
@@ -188,7 +189,6 @@
             this.cboShopper.Name = "cboShopper";
             this.cboShopper.Size = new System.Drawing.Size(220, 21);
             this.cboShopper.TabIndex = 18;
-            
             // 
             // txtRecipient
             // 
@@ -218,11 +218,23 @@
             this.lblUpdateData.TabIndex = 21;
             this.lblUpdateData.Text = "Ažuriraj podatke:";
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(19, 499);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(332, 39);
+            this.btnDelete.TabIndex = 22;
+            this.btnDelete.Text = "Izbriši";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Visible = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // FrmRecordEquipment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(363, 550);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.lblUpdateData);
             this.Controls.Add(this.cboSelectedItem);
             this.Controls.Add(this.txtRecipient);
@@ -269,6 +281,7 @@
         private System.Windows.Forms.TextBox txtRecipient;
         private System.Windows.Forms.ComboBox cboSelectedItem;
         private System.Windows.Forms.Label lblUpdateData;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
 

@@ -47,6 +47,12 @@ namespace RegistarOpreme.Models
 
         }
 
+        public void DeleteData(int id)
+        {
+
+            EquipmentRecordRepository.DeleteRecord(id);
+        }
+
         
     }
 }
