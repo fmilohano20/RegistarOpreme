@@ -13,7 +13,8 @@ using System.Windows.Forms;
 namespace RegistarOpreme
 {
     public partial class FrmViewEquipment : Form
-    {
+    {   
+        public List<FinanceSource> financeSources { get; set; }
         public FrmViewEquipment()
         {
             InitializeComponent();
@@ -28,7 +29,9 @@ namespace RegistarOpreme
         private void FrmViewEquipment_Load(object sender, EventArgs e)
         {
             var equipmentRecords = EquipmentRecordRepository.GetEquipmentRecords();
+            financeSources = FinanceSourceRepository.GetFinanceSources();
             dgvEquipmentRecords.DataSource = equipmentRecords;
+            cboFinanceSource.DataSource = financeSources;
             dgvEquipmentRecords.Columns["Id"].DisplayIndex = 0;
             dgvEquipmentRecords.Columns["Name"].DisplayIndex = 1;
             dgvEquipmentRecords.Columns["Type"].DisplayIndex = 2;
@@ -56,6 +59,18 @@ namespace RegistarOpreme
             FrmRecordEquipment frmRecordEquipment = new FrmRecordEquipment(true);
             frmRecordEquipment.ShowDialog();
             Close();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            var equipmentRecords = EquipmentRecordRepository.GetEquipmentByFinanceSource(((FinanceSource)cboFinanceSource.SelectedItem).Id);
+            dgvEquipmentRecords.DataSource = equipmentRecords;
+        }
+
+        private void cboFinanceSource_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+
         }
     }
 }

@@ -73,7 +73,7 @@ namespace RegistarOpreme
             else
             {
                 if (Update_bool)
-                {
+                {   
                     user.RecordData(name, type, project, description, financesource, shopper, recipient, cboSelectedItem.SelectedIndex);
                     MessageBox.Show("Uspiješano ažuriranje podataka!", "Ažuriranje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

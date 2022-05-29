@@ -31,6 +31,8 @@
             this.dgvEquipmentRecords = new System.Windows.Forms.DataGridView();
             this.btnRecord = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.cboFinanceSource = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipmentRecords)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,11 +66,32 @@
             this.btnUpdate.Visible = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(735, 6);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(289, 36);
+            this.btnSearch.TabIndex = 4;
+            this.btnSearch.Text = "Pretraži";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // cboFinanceSource
+            // 
+            this.cboFinanceSource.FormattingEnabled = true;
+            this.cboFinanceSource.Location = new System.Drawing.Point(516, 15);
+            this.cboFinanceSource.Name = "cboFinanceSource";
+            this.cboFinanceSource.Size = new System.Drawing.Size(213, 21);
+            this.cboFinanceSource.TabIndex = 5;
+            this.cboFinanceSource.SelectedIndexChanged += new System.EventHandler(this.cboFinanceSource_SelectedIndexChanged);
+            // 
             // FrmViewEquipment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1125, 552);
+            this.Controls.Add(this.cboFinanceSource);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnRecord);
             this.Controls.Add(this.dgvEquipmentRecords);
@@ -85,5 +108,7 @@
         private System.Windows.Forms.DataGridView dgvEquipmentRecords;
         private System.Windows.Forms.Button btnRecord;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.ComboBox cboFinanceSource;
     }
 }

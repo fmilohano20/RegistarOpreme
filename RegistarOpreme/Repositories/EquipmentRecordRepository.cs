@@ -13,7 +13,7 @@ namespace RegistarOpreme.Repositories
     {
         public static void CreateRecord(string name, string type, string project, string description, int financeSource, int shopper, int recipient,string processingDate)
         {
-            DB.SetConfiguration("fmilohano20_DB", "fmilohano20", "U^(q{5Oi"); // Important!
+            DB.SetConfiguration("fmilohano20_DB", "fmilohano20", "U^(q{5Oi"); 
             string sql = $"INSERT INTO EquipmentRecords (Name,Type,Description,Project_name,FinanceSource,Processing_date,Shopper,Recipient) VALUES ('{name}','{type}','{description}','{project}','{financeSource}','{processingDate}','{shopper}','{recipient}')";
             DB.OpenConnection();
             DB.ExecuteCommand(sql);
@@ -21,9 +21,11 @@ namespace RegistarOpreme.Repositories
         }
 
 
+
+
         public static void UpdateRecord(string name, string type, string project, string description, int financeSource, int shopper, int recipient, string processingDate,int id)
         {
-            DB.SetConfiguration("fmilohano20_DB", "fmilohano20", "U^(q{5Oi"); // Important!
+            DB.SetConfiguration("fmilohano20_DB", "fmilohano20", "U^(q{5Oi"); 
             string sql = $"UPDATE EquipmentRecords SET Name = '{name}',Type = '{type}',Description = '{description}',Project_name = '{project}',FinanceSource = '{financeSource}',Processing_date ='{processingDate}',Shopper = '{shopper}',Recipient = '{recipient}' WHERE Id = '{id}'";
             DB.OpenConnection();
             DB.ExecuteCommand(sql);
@@ -32,7 +34,7 @@ namespace RegistarOpreme.Repositories
 
         public static void DeleteRecord(int id)
         {
-            DB.SetConfiguration("fmilohano20_DB", "fmilohano20", "U^(q{5Oi"); // Important!
+            DB.SetConfiguration("fmilohano20_DB", "fmilohano20", "U^(q{5Oi"); 
             string sql = $"DELETE FROM EquipmentRecords WHERE Id = '{id}'";
             DB.OpenConnection();
             DB.ExecuteCommand(sql);
@@ -41,7 +43,7 @@ namespace RegistarOpreme.Repositories
 
         public static List<EquipmentRecord> GetEquipmentRecords()
         {
-            DB.SetConfiguration("fmilohano20_DB", "fmilohano20", "U^(q{5Oi"); // Important!
+            DB.SetConfiguration("fmilohano20_DB", "fmilohano20", "U^(q{5Oi"); 
             List<EquipmentRecord> equipmentRecords;
             string sql = "SELECT * FROM EquipmentRecords";
             DB.OpenConnection();
@@ -69,9 +71,11 @@ namespace RegistarOpreme.Repositories
 
         }
 
+
+
         public static EquipmentRecord GetEquipmentRecord(int id)
         {
-            DB.SetConfiguration("fmilohano20_DB", "fmilohano20", "U^(q{5Oi"); // Important!
+            DB.SetConfiguration("fmilohano20_DB", "fmilohano20", "U^(q{5Oi");
             EquipmentRecord equipmentRecord = null;
             string sql = $"SELECT * FROM EquipmentRecords WHERE Id = {id}";
             DB.OpenConnection();
@@ -91,6 +95,38 @@ namespace RegistarOpreme.Repositories
 
 
         }
+
+        public static List<EquipmentRecord> GetEquipmentByFinanceSource(int financesource)
+        {
+            DB.SetConfiguration("fmilohano20_DB", "fmilohano20", "U^(q{5Oi");
+            List<EquipmentRecord> equipmentRecords;
+            string sql = $"SELECT * FROM EquipmentRecords WHERE FinanceSource = {financesource}";
+            DB.OpenConnection();
+
+            var reader = DB.GetDataReader(sql);
+            if (reader != null)
+            {
+                equipmentRecords = new List<EquipmentRecord>();
+            }
+            else
+            {
+                equipmentRecords = null;
+            }
+            while (reader.Read())
+            {
+                EquipmentRecord equipmentRecord = CreateObject(reader);
+                equipmentRecords.Add(equipmentRecord);
+            }
+            reader.Close();
+            DB.CloseConnection();
+
+            return equipmentRecords;
+
+
+
+        }
+
+
 
 
         private static EquipmentRecord CreateObject(SqlDataReader reader)
